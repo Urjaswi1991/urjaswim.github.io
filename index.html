@@ -3,178 +3,299 @@ index.html
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Urjaswi Mukherjee | Economics</title>
+  <title>Urjaswi Mukherjee</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <style>
+    /* ------- Global ------- */
     body {
-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    line-height: 1.6;
-    font-size: 16px;
-    color: #24292e;   /* GitHub text color */
-    background: #ffffff;
-    margin: 40px auto;
-    max-width: 800px;
-    padding: 20px;
+      margin: 0;
+      background: #fafafa;
+      color: #222;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Helvetica, Arial, sans-serif;
+      line-height: 1.6;
     }
 
-    header {
-      background: #222;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .nav {
-      background: #333;
-      text-align: center;
-      padding: 10px 0;
-    }
-
-    .nav a {
-      color: white;
+    a {
+      color: inherit;
       text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
     }
 
-    .nav a:hover {
+    a:hover {
       text-decoration: underline;
     }
 
-    .container {
-      max-width: 900px;
-      margin: 20px auto;
-      background: white;
-      padding: 20px 25px 40px;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    /* ------- Top nav bar ------- */
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #ffffff;
+      border-bottom: 1px solid #e1e4e8;
+      padding: 12px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
+    .top-bar .name {
+      font-weight: 600;
+      font-size: 20px;
+    }
+
+    .nav-links a {
+      margin-left: 20px;
+      font-size: 15px;
+    }
+
+    /* ------- Main layout ------- */
+    .page {
+      max-width: 1000px;
+      margin: 40px auto 60px;
+      padding: 0 40px;
+    }
+
+    /* ------- Hero section ------- */
+    .hero {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      padding-bottom: 40px;
+      border-bottom: 1px solid #e1e4e8;
+    }
+
+    .profile-photo {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-main {
+      flex: 1;
+    }
+
+    .hero-name {
+      font-size: 30px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .hero-line {
+      height: 2px;
+      width: 80px;
+      background: #c0c0c0;
+      margin: 8px 0 14px;
+    }
+
+    .hero-title-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      color: #555;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .hero-title-row .icon {
+      font-size: 16px;
+      margin-right: 4px;
+    }
+
+    .hero-address {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .hero-contact {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+      font-size: 14px;
+    }
+
+    .hero-contact a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-contact .icon {
+      font-size: 16px;
+    }
+
+    /* ------- Sections ------- */
     section {
-      margin-bottom: 40px;
+      margin-top: 40px;
     }
 
     section h2 {
-      border-bottom: 2px solid #eee;
-      padding-bottom: 5px;
+      font-size: 24px;
+      font-weight: 600;
+      border-bottom: 1px solid #e1e4e8;
+      padding-bottom: 6px;
+      margin-bottom: 16px;
     }
 
-    .cv-link {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 8px 14px;
-      border-radius: 4px;
-      border: 1px solid #333;
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
+    p {
+      margin-bottom: 12px;
     }
 
-    .cv-link:hover {
-      background: #333;
-      color: white;
+    ul {
+      padding-left: 24px;
+      margin: 12px 0;
     }
 
-    footer {
-      text-align: center;
-      font-size: 0.85em;
-      color: #666;
-      padding: 15px;
+    li {
+      margin-bottom: 8px;
+    }
+
+    .q-emoji {
+      margin-right: 6px;
+    }
+
+    /* ------- Responsive ------- */
+    @media (max-width: 768px) {
+      .top-bar {
+        padding: 10px 16px;
+      }
+
+      .page {
+        padding: 0 16px;
+      }
+
+      .hero {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-contact {
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Top banner -->
-  <header id="home">
-    <h1>Urjaswi Mukherjee</h1>
-    <p>Ph.D. Candidate in Economics · University of Nevada, Reno (UNR)</p>
+  <!-- Top navigation bar -->
+  <header class="top-bar">
+    <div class="name">Urjaswi Mukherjee</div>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#cv">CV</a>
+    </nav>
   </header>
 
-  <!-- “Tabs” navigation -->
-  <nav class="nav">
-      <a href="#about">About</a> |
-    <a href="#research">Research</a> |
-    <a href="#teaching">Teaching</a> |
-    <a href="#cv">CV</a>
-  </nav>
+  <main class="page">
+    <!-- Hero section with photo and contact info -->
+    <section class="hero" id="about">
+      <div class="profile-photo">
+        <!-- Upload an image called profile.jpg to the repo -->
+        <img src="profile.jpg" alt="Photo of Urjaswi Mukherjee">
+      </div>
 
+      <div class="hero-main">
+        <div class="hero-name">Urjaswi Mukherjee</div>
+        <div class="hero-line"></div>
 
-    <!-- ABOUT -->
-    <section id="about">
-      <h2>Self Introduction</h2>
-        <p>
-            I am a fifth-year Ph.D. candidate in the Department of Economics at the University of Nevada, Reno (UNR), <strong>currently on the job market for the 2025–2026 academic year.</strong>
-        </p>
+        <div class="hero-title-row">
+          <span class="icon">👤</span>
+          <span>Ph.D. Candidate in Economics</span>
+          <span>·</span>
+          <span>University of Nevada, Reno (UNR)</span>
+        </div>
 
-        <p>
-            My research fields are <strong>Health Economics, Applied Microeconomics</strong> and <strong>Behavioral Economics</strong>. Broadly, my research explores how public policies interact with psychological and economic factors to influence mental health and financial well-being. My current work centers on evaluating the health and economic impacts of key federal policies, including the Consolidated Appropriations Act (CAA) and the Inflation Reduction Act (IRA). Three key questions drive my research:
-        </p>
+        <div class="hero-address">
+          1664 N. Virginia Street, The John Tulloch Business Building,<br>
+          Reno, NV 89557
+        </div>
+      </div>
 
-        <ul>
-            <li class="question"><span class="emoji">❓</span>What are the effects of extended medicaid postpartum coverage on insurance and mental health outcomes?</li>
-            <li class="question"><span class="emoji">❓</span>What are the effects of debt relief programs on the mental health of farmers? Do minority farmers benefit more than white farmers?</li>
-            <li class="question"><span class="emoji">❓</span>What is the impact of negative life events on financial risk taking?</li>
-        </ul>
-
-        <p>
-            I have taught and assisted in teaching a range of undergraduate and graduate courses as both an instructor and a teaching assistant. I am passionate about fostering an active, dynamic, and inclusive learning environment where students can connect theory with real-world challenges.
-        </p>
+      <div class="hero-contact">
+        <a href="mailto:youremail@unr.edu">
+          <span class="icon">✉</span>
+          <span>youremail@unr.edu</span>
+        </a>
+        <a href="https://urjaswim.github.io" target="_blank">
+          <span class="icon">🌐</span>
+          <span>Personal website</span>
+        </a>
+        <a href="https://orcid.org/0000-0000-0000-0000" target="_blank">
+          <span class="icon">ⓞ</span>
+          <span>ORCID</span>
+        </a>
+        <a href="https://www.linkedin.com/" target="_blank">
+          <span class="icon">in</span>
+          <span>LinkedIn</span>
+        </a>
+      </div>
     </section>
 
-    <!-- RESEARCH -->
+    <!-- Self Introduction -->
+    <section>
+      <h2>Self Introduction</h2>
+
+      <p>
+        I am a fifth-year Ph.D. candidate in the Department of Economics at the
+        University of Nevada, Reno (UNR), <strong>currently on the job market for the
+        2025–2026 academic year.</strong>
+      </p>
+
+      <p>
+        My research fields are <strong>Health Economics, Applied Microeconomics</strong> and
+        <strong>Behavioral Economics</strong>. Broadly, my research explores how public
+        policies interact with psychological and economic factors to influence mental
+        health and financial well-being. My current work centers on evaluating the health
+        and economic impacts of key federal policies, including the Consolidated
+        Appropriations Act (CAA) and the Inflation Reduction Act (IRA). Three key
+        questions drive my research:
+      </p>
+
+      <ul>
+        <li><span class="q-emoji">❓</span>What are the effects of extended Medicaid postpartum coverage on insurance and mental health outcomes?</li>
+        <li><span class="q-emoji">❓</span>What are the effects of debt relief programs on the mental health of farmers? Do minority farmers benefit more than white farmers?</li>
+        <li><span class="q-emoji">❓</span>What is the impact of negative life events on financial risk taking?</li>
+      </ul>
+
+      <p>
+        I have taught and assisted in teaching a range of undergraduate and graduate
+        courses as both an instructor and a teaching assistant. I am passionate about
+        fostering an active, dynamic, and inclusive learning environment where students
+        can connect theory with real-world challenges.
+      </p>
+    </section>
+
+    <!-- Placeholder sections so the nav links work -->
     <section id="research">
       <h2>Research</h2>
-      <p><strong>Research Interests:</strong> Health Economics, Applied Microeconomics, Labor, Public Policy</p>
-      <ul>
-        <li><strong>Postpartum Medicaid Eligibility Expansions and Postpartum Health Measures</strong><br />
-          Working paper. [Add link or journal status here]
-        </li>
-        <li><strong>Consequences of Post-Public Health Emergency Medicaid Redetermination</strong><br />
-          Work in progress.
-        </li>
-        <!-- Add more papers as needed -->
-      </ul>
+      <p>[Add your research projects, working papers, and publications here.]</p>
     </section>
 
-    <!-- TEACHING -->
     <section id="teaching">
       <h2>Teaching</h2>
-      <p>
-        I have taught and assisted in teaching a variety of undergraduate and graduate-level
-        courses, including:
-      </p>
-      <ul>
-        <li>Principles of Statistics I (Econ 261)</li>
-        <li>Principles of Statistics II (Econ 262)</li>
-        <li>Applied Econometrics / Advanced Econometrics</li>
-        <li>Principles of Microeconomics &amp; Macroeconomics</li>
-        <!-- Add more courses here -->
-      </ul>
-      <p>
-        My teaching emphasizes conceptual understanding, statistical intuition, and
-        helping students build confidence with quantitative tools.
-      </p>
+      <p>[Add your teaching statement, courses taught, and sample syllabi here.]</p>
     </section>
 
-    <!-- CV -->
     <section id="cv">
-      <h2>Curriculum Vitae (CV)</h2>
-      <p>
-        You can download my full CV here:
-      </p>
-      <!-- After you upload your CV as cv.pdf, this link will work -->
-      <a class="cv-link" href="cv.pdf" target="_blank">Download CV (PDF)</a>
+      <h2>Curriculum Vitae</h2>
+      <p>You can download my CV here:</p>
+      <p><a href="cv.pdf" target="_blank"><strong>Download CV (PDF)</strong></a></p>
+      <!-- Upload a file named cv.pdf to the repo for this link to work -->
     </section>
-  </div>
-
-  <footer>
-    &copy; <span id="year"></span> Urjaswi Mukherjee · Contact: [your email here]
-  </footer>
-
-  <script>
-    // Set current year automatically
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  </main>
 
 </body>
 </html>
+
