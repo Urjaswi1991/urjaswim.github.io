@@ -58,21 +58,59 @@
 
 
        
-    h1 {
-      font-size: 2.4rem;
-      margin-bottom: 1rem;
+    /* ------- Sections ------- */
+    section {
+      margin-top: 40px;
     }
-    h2 {
-      font-size: 1.5rem;
-      margin-top: 2rem;
-      margin-bottom: 0.5rem;
+
+    section h2 {
+      font-size: 24px;
+      font-weight: 600;
+      border-bottom: 1px solid #e1e4e8;
+      padding-bottom: 6px;
+      margin-bottom: 16px;
     }
-    ol {
-      padding-left: 1.5rem;
+
+    p {
+      margin-bottom: 12px;
+    }
+
+    ul {
+      padding-left: 24px;
+      margin: 12px 0;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .q-emoji {
+      margin-right: 6px;
+    }
+
+    /* ------- Responsive ------- */
+    @media (max-width: 768px) {
+      .top-bar {
+        padding: 10px 16px;
+      }
+
+      .page {
+        padding: 0 16px;
+      }
+
+      .hero {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-contact {
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
 <body>
+
 
 <!-- Top navigation bar -->
   <header class="top-bar">
