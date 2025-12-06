@@ -6,86 +6,114 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<style>
+  <style>
+    /* ------- Global ------- */
     body {
-        font-family: Georgia, "Times New Roman", serif;
-        background: #f2f3f7;
-        margin: 0px;
-        padding: 0px;
-        color: #222;
-        line-height: 1.6;
+      margin: 0;
+      background: #fafafa;
+      color: #222;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Helvetica, Arial, sans-serif;
+      line-height: 1.6;
     }
 
-    .navbar {
-        background: white;
-        padding: 12px 40px;
-        display: flex;
-        align-items: center;
-        border-bottom: 1px solid #ddd;
-        margin: 0;
-        padding-top: 5px;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    .navbar .name {
-        font-size: 20px;
-        font-weight: bold;
-        margin-right: 20px;
+    a:hover {
+      text-decoration: underline;
     }
 
-    .navbar a {
-        margin-right: 20px;
-        text-decoration: none;
-        font-size: 16px;
+    /* ------- Top nav bar ------- */
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #ffffff;
+      border-bottom: 1px solid #e1e4e8;
+      padding: 12px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
-    h1 {
-        font-size: 42px;
-        margin-bottom: 20px;
+    .top-bar .name {
+      font-weight: 600;
+      font-size: 20px;
     }
 
-    h2 {
-        margin-top: 35px;
-        margin-bottom: 10px;
-        font-size: 26px;
-        font-weight: bold;
-    }
-    ol {
-      padding-left: 1.5rem;
-    }
-    .section-title {
-        font-size: 20px;
-        font-weight: bold;
-        margin-top: 25px;
+    .nav-links a {
+      margin-left: 20px;
+      font-size: 15px;
     }
 
-    .feedback-box {
-        background: white;
-        padding: 20px 25px;
-        margin-top: 20px;
-        border-radius: 12px;
-        box-shadow: 0 0 6px rgba(0,0,0,0.1);
+    /* ------- Main layout ------- */
+    .page {
+      max-width: 1000px;
+      margin: 40px auto 60px;
+      padding: 0 40px;
     }
 
-    .quote {
-        margin-bottom: 18px;
-        padding-left: 10px;
-        border-left: 3px solid #0072c6;
-        font-style: italic;
+
+       
+    /* ------- Sections ------- */
+    section {
+      margin-top: 40px;
     }
-</style>
+
+    section h2 {
+      font-size: 24px;
+      font-weight: 600;
+      border-bottom: 1px solid #e1e4e8;
+      padding-bottom: 6px;
+      margin-bottom: 16px;
+    }
+
+    p {
+      margin-bottom: 12px;
+    }
+
+    ul {
+      padding-left: 24px;
+      margin: 12px 0;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .q-emoji {
+      margin-right: 6px;
+    }
+
+    /* ------- Responsive ------- */
+    @media (max-width: 768px) {
+      .top-bar {
+        padding: 10px 16px;
+      }
+
+      .page {
+        padding: 0 16px;
+      }
+
+    }
+  </style>
 </head>
-
 <body>
 
-<!-- ⭐ NAVBAR -->
-<div class="navbar">
-    <div class="name">Urjaswi Mukherjee</div>
-    <a href="index.html">Home</a>
-    <a href="Research.html">Research</a>
-    <a href="Teaching.html" class="active">Teaching</a>
-    <a href="cv.html">CV</a>
-</div>
 
+<!-- Top navigation bar -->
+  <header class="top-bar">
+    <div class="name">Urjaswi Mukherjee</div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="Research.html">Research</a>
+      <a href="Teaching.html"class="active">Teaching</a>
+      <a href="CV.html">CV</a>
+    </nav>
+  </header>
 <!-- ⭐ MAIN CONTENT -->
 <div class="content">
 
